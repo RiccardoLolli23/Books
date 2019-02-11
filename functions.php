@@ -42,77 +42,20 @@
  {
 	$str = file_get_contents('http://localhost/Lolli/Tp/books.json');
 	$books = json_decode($str, true); 
-	list($day1,$month1,$year1) = explode('/', $data1);
-	list($day2,$month2,$year2) = explode('/', $data2);
+	
 	$result = array();	
 
 	foreach($books as $book)
 	{
-		//list($day,$month,$year) = explode('/', $book['Data']);
-	
-		/*if($year > $year1)
-		{
-			 
-			if($year2 > $year)
-			{			 			 				
-			 	array_push($result,$book['Titolo']);
-			}
-			elseif($year2 == $year && $month2 > $month)
-			{
-				array_push($result,$book['Titolo']);
-			}
-			else if($month2 == $month && $day2 >= $day)
-			{					
-				array_push($result,$book['Titolo']);
-			}		 			
-		}
-		elseif($year == $year1 && $month > $month1)
-		{
-			if($year2 > $year)
-			{		 
-				array_push($result,$book['Titolo']);								 			
-			}
-			elseif($year2 == $year && $month2 > $month)
-			{
-				array_push($result,$book['Titolo']);
-			}
-			elseif($month2 == $month && $day2 >= $day)
-			{
-					array_push($result,$book['Titolo']);
-			}	
-		}
-		elseif($month == $month1 && $day >= $day1)
-		{
-			if($year2 > $year)
-			{
-				array_push($result,$book['Titolo']);								 			
-			}
-			elseif($year2 == $year && $month2 > $month)
-			{
-				array_push($result,$book['Titolo']);
-			}
-			elseif($month2 == $month && $day2 >= $day)
-			{
-				array_push($result,$book['Titolo']);
-			}	
-		}*/
 		
-		$date1 = date_create_from_format("d/m/Y",$data1);
-		$date2 = date_create_from_format("d/m/Y",$data2);
-		$dateb = date_create_from_format("d/m/Y",$book['Data']);
 		
-		if($date1->diff($dateb) < $date2->($date1))
+		if(diff($data1,$book['Data']))
 		{
-			echo(22222);
+			if(diff($data2,$book['Data']))
+				array_push($result,$book['Titolo']);
 		}
-		$interval = date_diff($date1, $dateb);
-		$interval = $datetime1->diff($datetime2);
-		if( $interval->format('%d');
 	}
-	$data1 = date_create('2017-04-13');
-$data2 = date_create('2017-04-15');
-$interval = date_diff($data1, $data2);
-echo $interval->format('%d');
+
 	return $result;
  }
  
@@ -144,7 +87,24 @@ echo $interval->format('%d');
  
  
  
- 
+ function diff($d1,$d2)
+ {
+	list($day1,$month1,$year1) = explode('/', $d1);
+	list($day2,$month2,$year2) = explode('/', $d2);	
+	
+	if($year1 > $year2)
+		{			 			 				
+			return true;
+		}
+		elseif($year1 == $year2 && $month1 > $month2)
+		{
+				return true;
+		}
+		else if($month1 == $month2 && $day1 >= $day2)
+		{					
+			return true;
+		}
+ }
  
  
  
