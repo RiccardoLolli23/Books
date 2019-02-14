@@ -65,7 +65,8 @@ namespace Libri_Samir_Lolli
                 {
                     using (HttpContent content = response.Content)
                     {
-                         mycontent = await content.ReadAsStringAsync();
+                        mycontent = await content.ReadAsStringAsync();
+                        lst.Items.Clear();
                         lst.Items.Add(mycontent);
                     }
 
