@@ -23,12 +23,15 @@ namespace Libri_Samir_Lolli
     /// </summary>
     public partial class MainWindow : Window
     {
+        static string mycontent;
+        static ListBox lst;
         public MainWindow()
         {
             InitializeComponent();
+            lst = lst_primary;
         }
 
-        static object var;
+       
 
         private void btn_richiesta1_Click(object sender, RoutedEventArgs e)
         {
@@ -62,9 +65,8 @@ namespace Libri_Samir_Lolli
                 {
                     using (HttpContent content = response.Content)
                     {
-                        string mycontent = await content.ReadAsStringAsync();
-                        var = mycontent;
-                        MessageBox.Show(mycontent);
+                         mycontent = await content.ReadAsStringAsync();
+                        lst.Items.Add(mycontent);
                     }
 
                 }
