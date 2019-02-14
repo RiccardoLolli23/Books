@@ -26,7 +26,7 @@
 	$result = array();
 	$b = array();
 	$s = array();
-	 
+	
 	foreach($a as $book)
 	{
 		 
@@ -49,7 +49,7 @@
 	{
 		
 		
-		if(diff($data1,$book['Data']))
+		if(diff($book['Data'],$data1))
 		{
 			if(diff($data2,$book['Data']))
 				array_push($result,$book['Titolo']);
@@ -87,6 +87,12 @@
  
  
  
+ 
+ 
+ 
+ 
+ 
+ 
  function diff($d1,$d2)
  {
 	list($day1,$month1,$year1) = explode('/', $d1);
@@ -100,26 +106,11 @@
 		{
 				return true;
 		}
-		else if($month1 == $month2 && $day1 >= $day2)
+		else if($year1 == $year2 && $month1 == $month2 && $day1 >= $day2)
 		{					
 			return true;
 		}
  }
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
  
 function array_sort($array, $on, $order=SORT_ASC)
 {
