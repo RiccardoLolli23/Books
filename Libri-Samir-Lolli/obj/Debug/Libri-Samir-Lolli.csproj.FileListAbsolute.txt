@@ -1,0 +1,15 @@
+C:\Users\abdelmalek.samir\source\repos\Libri-Samir-Lolli\Libri-Samir-Lolli\obj\Debug\Libri-Samir-Lolli.csprojAssemblyReference.cache
+C:\Users\abdelmalek.samir\source\repos\Libri-Samir-Lolli\Libri-Samir-Lolli\obj\Debug\MainWindow.g.cs
+C:\Users\abdelmalek.samir\source\repos\Libri-Samir-Lolli\Libri-Samir-Lolli\obj\Debug\App.g.cs
+C:\Users\abdelmalek.samir\source\repos\Libri-Samir-Lolli\Libri-Samir-Lolli\obj\Debug\Libri-Samir-Lolli_MarkupCompile.cache
+C:\Users\abdelmalek.samir\source\repos\Libri-Samir-Lolli\Libri-Samir-Lolli\obj\Debug\Libri-Samir-Lolli_MarkupCompile.lref
+C:\Users\abdelmalek.samir\source\repos\Libri-Samir-Lolli\Libri-Samir-Lolli\bin\Debug\Libri-Samir-Lolli.exe.config
+C:\Users\abdelmalek.samir\source\repos\Libri-Samir-Lolli\Libri-Samir-Lolli\bin\Debug\Libri-Samir-Lolli.exe
+C:\Users\abdelmalek.samir\source\repos\Libri-Samir-Lolli\Libri-Samir-Lolli\bin\Debug\Libri-Samir-Lolli.pdb
+C:\Users\abdelmalek.samir\source\repos\Libri-Samir-Lolli\Libri-Samir-Lolli\obj\Debug\MainWindow.baml
+C:\Users\abdelmalek.samir\source\repos\Libri-Samir-Lolli\Libri-Samir-Lolli\obj\Debug\Libri-Samir-Lolli.g.resources
+C:\Users\abdelmalek.samir\source\repos\Libri-Samir-Lolli\Libri-Samir-Lolli\obj\Debug\Libri_Samir_Lolli.Properties.Resources.resources
+C:\Users\abdelmalek.samir\source\repos\Libri-Samir-Lolli\Libri-Samir-Lolli\obj\Debug\Libri-Samir-Lolli.csproj.GenerateResource.cache
+C:\Users\abdelmalek.samir\source\repos\Libri-Samir-Lolli\Libri-Samir-Lolli\obj\Debug\Libri-Samir-Lolli.csproj.CoreCompileInputs.cache
+C:\Users\abdelmalek.samir\source\repos\Libri-Samir-Lolli\Libri-Samir-Lolli\obj\Debug\Libri-Samir-Lolli.exe
+C:\Users\abdelmalek.samir\source\repos\Libri-Samir-Lolli\Libri-Samir-Lolli\obj\Debug\Libri-Samir-Lolli.pdb
