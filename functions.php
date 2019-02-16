@@ -9,7 +9,7 @@
 	{
 		if($book['Sezione']==$Sezione && $book['Reparto']==$Reparto)
 		{
-			array_push($result,$book['Titolo']);
+			array_push($result,"Titolo: ".$book['Titolo']);
 			 
 		}
 	}
@@ -30,9 +30,9 @@
 	foreach($a as $book)
 	{
 		 
-		array_push($b,$book['Titolo']);
+		array_push($b,"Titolo: ".$book['Titolo']);
 			 
-		array_push($s, $book['Sconto']);	 
+		array_push($s,"Sconto: " .$book['Sconto']);	 
 	}
 	array_push($result,$b,$s);
 	return $result;
@@ -52,7 +52,7 @@
 		if(diff($book['Data'],$data1))
 		{
 			if(diff($data2,$book['Data']))
-				array_push($result,$book['Titolo']);
+				array_push($result,"Titolo: " . $book['Titolo']);
 		}
 	}
 
@@ -70,12 +70,12 @@
 	{
 		if($utente['Id'] == $id)
 		{
-			array_push($result,$utente['Email']);
+			array_push($result,"Email: ".$utente['Email']);
 			foreach($utente['Cart'] as $c)
 			{
-				array_push($b,$c['Book'][0]['BookId']);
+				array_push($b,"Libro: ".$c['Book'][0]['BookId']);
 					  
-				array_push($a,$c['Book'][0]['Amount']);				  
+				array_push($a,"Amount: ".$c['Book'][0]['Amount']);				  
 			}
 		} 
 	}

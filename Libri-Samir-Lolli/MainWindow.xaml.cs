@@ -66,8 +66,39 @@ namespace Libri_Samir_Lolli
                     using (HttpContent content = response.Content)
                     {
                         mycontent = await content.ReadAsStringAsync();
+                        
                         lst.Items.Clear();
-                        lst.Items.Add(mycontent);
+                        mycontent = mycontent.Replace("],","");
+                        mycontent = mycontent.Replace("]","");
+                        mycontent = mycontent.Replace(",[","[");
+                        string[] s = mycontent.Split('[');                        
+                        int count = 0;
+                        string[][] a;
+
+                        for (int i = 0; i < s.Length; i++)
+                        {
+                            if (s[i] != "")
+                            {
+                               
+                                count++;
+                            }
+                        }
+                        a = new string[count][];
+                        count = 0;
+                        for (int i = 0; i < s.Length; i++)
+                        {
+                            if (s[i] != "")
+                            {
+                                a[count] = s[i].Split(',');
+                                count++;
+                            }
+                        }
+                        for (int j = 0; j < a[0].Length; j++)
+                            for (int i = 0; i < a.GetLength(0) ; i++)
+                        {
+                            
+                                lst.Items.Add(a[i][j]);
+                        }
                     }
 
                 }
