@@ -53,8 +53,20 @@ namespace Libri_Samir_Lolli
 
         private void btn_richiesta_4_Click(object sender, RoutedEventArgs e)
         {
-            string url = "http://10.13.100.2/Lolli/Tp/Server.php?op=4&id=" + txt_ID.Text;
-            Richiesta(url);
+            int n;
+
+            if (int.TryParse(txt_ID.Text, out n))
+            {
+                if (n <= 5 && n > 0)
+                {
+                    string url = "http://10.13.100.2/Lolli/Tp/Server.php?op=4&id=" + txt_ID.Text;
+                    Richiesta(url);
+                }
+                else
+                    MessageBox.Show("Index should be lower or equal than 5", "Errore");
+            }
+            else
+                MessageBox.Show("The input should be a number between 1 and 5", "Errore");
         }
 
         async static void Richiesta(string url)
@@ -71,38 +83,40 @@ namespace Libri_Samir_Lolli
                         mycontent = mycontent.Replace("],","");
                         mycontent = mycontent.Replace("]","");
                         mycontent = mycontent.Replace(",[","[");
-                        string[] s = mycontent.Split('[');                        
-                        int count = 0;
-                        string[][] a;
+                        if (mycontent != "[")
+                        {
+                            string[] s = mycontent.Split('[');
+                            int count = 0;
+                            string[][] a;
 
-                        for (int i = 0; i < s.Length; i++)
-                        {
-                            if (s[i] != "")
+                            for (int i = 0; i < s.Length; i++)
                             {
-                               
-                                count++;
+                                if (s[i] != "")
+                                {
+
+                                    count++;
+                                }
                             }
-                        }
-                        a = new string[count][];
-                        count = 0;
-                        for (int i = 0; i < s.Length; i++)
-                        {
-                            if (s[i] != "")
+                            a = new string[count][];
+                            count = 0;
+                            for (int i = 0; i < s.Length; i++)
                             {
-                                a[count] = s[i].Split(',');
-                                count++;
+                                if (s[i] != "")
+                                {
+                                    a[count] = s[i].Split(',');
+                                    count++;
+                                }
                             }
-                        }
-                        for (int j = 0; j < a[0].Length; j++)
-                            for (int i = 0; i < a.GetLength(0) ; i++)
-                        {
-                            
-                                lst.Items.Add(a[i][j]);
+                            for (int j = 0; j < a[0].Length; j++)
+                            {
+                                for (int i = 0; i < a.GetLength(0); i++)
+                                {
+                                    lst.Items.Add(a[i][j]);
+                                }
+                            }
                         }
                     }
-
                 }
-
             }
         }
     }
