@@ -1,0 +1,22 @@
+﻿<Window x:Class="Libri_Samir_Lolli.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Libri_Samir_Lolli"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Button x:Name="btn_richiesta1" Content="Richiesta 1" HorizontalAlignment="Left" Margin="50,71,0,0" VerticalAlignment="Top" Width="98" Height="54" Click="btn_richiesta1_Click"/>
+        <Button x:Name="btn_richiesta2" Content="Richiesta 2" HorizontalAlignment="Left" Margin="190,71,0,0" VerticalAlignment="Top" Width="99" Height="99" Click="btn_richiesta2_Click"/>
+        <Button x:Name="btn_richiesta_4" Content="Richiesta 4" HorizontalAlignment="Left" Margin="50,212,0,0" VerticalAlignment="Top" Width="98" Height="74" Click="btn_richiesta_4_Click"/>
+        <Button x:Name="btn_richiesta3" Content="Richiesta 3" HorizontalAlignment="Left" Margin="190,212,0,0" VerticalAlignment="Top" Width="99" Height="49" Click="btn_richiesta3_Click_1"/>
+        <TextBox x:Name="txt_ID" HorizontalAlignment="Left" Height="24" Margin="50,286,0,0" TextWrapping="Wrap" Text="ID" VerticalAlignment="Top" Width="98"/>
+        <ListBox x:Name="lst_primary" HorizontalAlignment="Left" Height="399" Margin="403,10,0,0" VerticalAlignment="Top" Width="379"/>
+        <TextBox x:Name="txt_SEZ" HorizontalAlignment="Left" Height="24" Margin="50,122,0,0" TextWrapping="Wrap" Text="Sezione" VerticalAlignment="Top" Width="98"/>
+        <TextBox x:Name="txt_DATA1" HorizontalAlignment="Left" Height="24" Margin="191,261,0,0" TextWrapping="Wrap" Text="Data prima" VerticalAlignment="Top" Width="98"/>
+        <TextBox x:Name="txt_DATA2" HorizontalAlignment="Left" Height="24" Margin="191,285,0,0" TextWrapping="Wrap" Text="Data seconda" VerticalAlignment="Top" Width="98"/>
+        <TextBox x:Name="txt_REP" HorizontalAlignment="Left" Height="24" Margin="50,146,0,0" TextWrapping="Wrap" Text="Reparto" VerticalAlignment="Top" Width="98"/>
+
+    </Grid>
+</Window>
