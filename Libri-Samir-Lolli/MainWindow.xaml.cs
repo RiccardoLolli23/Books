@@ -96,10 +96,11 @@ namespace Libri_Samir_Lolli
                         mycontent = mycontent.Replace(",[","[");
                         if (mycontent != "[")
                         {
+                            //separa il risultato in array
                             string[] s = mycontent.Split('[');
                             int count = 0;
                             string[][] a;
-
+                            //Conta il numero di array
                             for (int i = 0; i < s.Length; i++)
                             {
                                 if (s[i] != "")
@@ -110,6 +111,7 @@ namespace Libri_Samir_Lolli
                             }
                             a = new string[count][];
                             count = 0;
+                            //Separa gli array nei singoli elementi
                             for (int i = 0; i < s.Length; i++)
                             {
                                 if (s[i] != "")
@@ -118,6 +120,7 @@ namespace Libri_Samir_Lolli
                                     count++;
                                 }
                             }
+                            //visualizza i risultati
                             for (int j = 0; j < a[0].Length; j++)
                             {
                                 for (int i = 0; i < a.GetLength(0); i++)
