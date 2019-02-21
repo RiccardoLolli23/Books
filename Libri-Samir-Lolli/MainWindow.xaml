@@ -14,9 +14,9 @@
         <TextBox x:Name="txt_ID" HorizontalAlignment="Left" Height="24" Margin="50,286,0,0" TextWrapping="Wrap" Text="ID" VerticalAlignment="Top" Width="98"/>
         <ListBox x:Name="lst_primary" HorizontalAlignment="Left" Height="399" Margin="403,10,0,0" VerticalAlignment="Top" Width="379"/>
         <TextBox x:Name="txt_SEZ" HorizontalAlignment="Left" Height="24" Margin="50,122,0,0" TextWrapping="Wrap" Text="Sezione" VerticalAlignment="Top" Width="98"/>
-        <TextBox x:Name="txt_DATA1" HorizontalAlignment="Left" Height="24" Margin="191,261,0,0" TextWrapping="Wrap" Text="Data prima" VerticalAlignment="Top" Width="98"/>
-        <TextBox x:Name="txt_DATA2" HorizontalAlignment="Left" Height="24" Margin="191,285,0,0" TextWrapping="Wrap" Text="Data seconda" VerticalAlignment="Top" Width="98"/>
         <TextBox x:Name="txt_REP" HorizontalAlignment="Left" Height="24" Margin="50,146,0,0" TextWrapping="Wrap" Text="Reparto" VerticalAlignment="Top" Width="98"/>
+        <DatePicker x:Name="Date2" HorizontalAlignment="Left" Margin="190,295,0,0" VerticalAlignment="Top" Width="98"/>
+        <DatePicker x:Name="Date1" HorizontalAlignment="Left" Margin="190,266,0,0" VerticalAlignment="Top" Width="98"/>
 
     </Grid>
 </Window>

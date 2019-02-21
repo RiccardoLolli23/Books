@@ -47,8 +47,19 @@ namespace Libri_Samir_Lolli
 
         private void btn_richiesta3_Click_1(object sender, RoutedEventArgs e)
         {
-            string url = "http://10.13.100.2/Lolli/Tp/Server.php?op=3&d1="+txt_DATA1.Text+"&d2="+txt_DATA2.Text;
-            Richiesta(url);
+            if (Date1.SelectedDate != null)
+            {
+                if (Date2.SelectedDate != null)
+                {
+                    string url = "http://10.13.100.2/Lolli/Tp/Server.php?op=3&d1=" + Date1.SelectedDate + "&d2=" + Date2.SelectedDate;
+                    Richiesta(url);
+                }
+                else
+                    MessageBox.Show("Select date", "Errore");
+            }
+            else
+                MessageBox.Show("Select date", "Errore");
+
         }
 
         private void btn_richiesta_4_Click(object sender, RoutedEventArgs e)

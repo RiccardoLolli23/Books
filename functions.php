@@ -7,6 +7,7 @@
 	
 	foreach($books as $book)
 	{
+		//Ottiene il titolo in base al reparto e alla sezione
 		if($book['Sezione']==$Sezione && $book['Reparto']==$Reparto)
 		{
 			array_push($result,"Titolo: ".$book['Titolo']);
@@ -22,10 +23,11 @@
  {
 	$str = file_get_contents('http://localhost/Lolli/Tp/books.json');
 	$books = json_decode($str, true);	 
-	$a=	array_sort($books,"Sconto");
 	$result = array();
 	$b = array();
 	$s = array();
+	//Ordina L'array
+	$a=	array_sort($books,"Sconto");
 	
 	foreach($a as $book)
 	{
@@ -47,8 +49,7 @@
 
 	foreach($books as $book)
 	{
-		
-		
+		//Ritorna i titoli compresi tra due date
 		if(diff($book['Data'],$data1))
 		{
 			if(diff($data2,$book['Data']))
@@ -66,11 +67,14 @@
 	$result = array();
 	$b = array();
 	$a = array();
+	
 	foreach($utenti as $utente)
 	{
+		//Controlla l'utente inserito
 		if($utente['Id'] == $id)
 		{
 			array_push($result,"Email: ".$utente['Email']);
+			//Ritorna il carrello
 			foreach($utente['Cart'] as $c)
 			{
 				array_push($b,"Libro: ".$c['Book'][0]['BookId']);
@@ -97,7 +101,7 @@
  {
 	list($day1,$month1,$year1) = explode('/', $d1);
 	list($day2,$month2,$year2) = explode('/', $d2);	
-	
+	//Confronta le due date
 	if($year1 > $year2)
 		{			 			 				
 			return true;
