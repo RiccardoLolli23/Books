@@ -52,6 +52,7 @@
 		//Ritorna i titoli compresi tra due date
 		if(diff($book['Data'],$data1))
 		{
+			
 			if(diff($data2,$book['Data']))
 				array_push($result,"Titolo: " . $book['Titolo']);
 		}
@@ -106,11 +107,11 @@
 		{			 			 				
 			return true;
 		}
-		elseif($year1 == $year2 && $month1 > $month2)
+		if($year1 == $year2 && $month1 > $month2)
 		{
 				return true;
 		}
-		else if($year1 == $year2 && $month1 == $month2 && $day1 >= $day2)
+		if($year1 == $year2 && $month1 == $month2 && $day1 >= $day2)
 		{					
 			return true;
 		}

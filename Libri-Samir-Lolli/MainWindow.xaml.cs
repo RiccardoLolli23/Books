@@ -51,7 +51,8 @@ namespace Libri_Samir_Lolli
             {
                 if (Date2.SelectedDate != null)
                 {
-                    string url = "http://10.13.100.2/Lolli/Tp/Server.php?op=3&d1=" + Date1.SelectedDate + "&d2=" + Date2.SelectedDate;
+                    string url = "http://10.13.100.2/Lolli/Tp/Server.php?op=3&d1=" + Date1.DisplayDate.ToShortDateString() + "&d2=" + Date2.DisplayDate.ToShortDateString();
+                    
                     Richiesta(url);
                 }
                 else
