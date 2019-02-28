@@ -186,7 +186,7 @@ namespace Libri_Samir_Lolli
                 //separa il risultato in array
                 string[] s = stringa.Split('[');
                 int count = 0;
-                
+
                 //Conta il numero di array
                 for (int i = 0; i < s.Length; i++)
                 {
@@ -207,10 +207,13 @@ namespace Libri_Samir_Lolli
                         count++;
                     }
                 }
-            }else
+            }
+            else
+            {
                 result = new string[1][];
-            result[0] = new string[1];
-            result[0][0] = "";
+                result[0] = new string[1];
+                result[0][0] = "";
+            }
         }
     }
 }
