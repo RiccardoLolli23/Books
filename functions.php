@@ -11,7 +11,7 @@
 		if($book['Sezione']==$Sezione && $book['Reparto']==$Reparto)
 		{
 			//array_push($result,$book['Titolo']);
-			$count++
+			$count++;
 			
 		}
 	}
