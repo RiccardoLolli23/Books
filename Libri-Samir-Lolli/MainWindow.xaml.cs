@@ -100,16 +100,12 @@ namespace Libri_Samir_Lolli
                     string task = await(Richiesta(url));
                     SplitReplace(task);
                     
-                        lst.Items.Add("Titolo: " + result[0][0]);
+                        lst.Items.Add("Email: " + result[0][0]);
                         for (int j = 0; j < result[1].Length; j++)
                         {
-                            lst.Items.Add("Titolo: " + result[1][j] + " Sconto: " + result[2][j]);
+                            lst.Items.Add("Titolo: " + result[1][j] + " Quantità: " + result[2][j]);
 
-                        }
-                        
-
-                    
-                    
+                        }                                                           
                 }
                 else
                     MessageBox.Show("Index should be lower or equal than 5", "Errore");
