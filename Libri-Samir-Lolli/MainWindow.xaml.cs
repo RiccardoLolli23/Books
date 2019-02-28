@@ -37,6 +37,7 @@ namespace Libri_Samir_Lolli
 
         async private void btn_richiesta1_Click(object sender, RoutedEventArgs e)
         {
+            lst.Items.Clear();
             string url = "http://10.13.100.2/Lolli/Tp/Server.php?op=1&rep=" + txt_REP.Text.ToLower()+"&sez="+txt_SEZ.Text.ToLower();
             string task = await(Richiesta(url));
             SplitReplace(task);
@@ -50,6 +51,7 @@ namespace Libri_Samir_Lolli
 
         async private void btn_richiesta2_Click(object sender, RoutedEventArgs e)
         {
+            lst.Items.Clear();
             string url = "http://10.13.100.2/Lolli/Tp/Server.php?op=2";
             //Richiesta(url);
             string task = await(Richiesta(url));
@@ -66,6 +68,7 @@ namespace Libri_Samir_Lolli
 
         async private void btn_richiesta3_Click_1(object sender, RoutedEventArgs e)
         {
+            lst.Items.Clear();
             if (Date1.SelectedDate != null)
             {
                 if (Date2.SelectedDate != null)
@@ -90,6 +93,7 @@ namespace Libri_Samir_Lolli
 
         async private void btn_richiesta_4_Click(object sender, RoutedEventArgs e)
         {
+            lst.Items.Clear();
             int n;
 
             if (int.TryParse(txt_ID.Text, out n))
@@ -203,6 +207,10 @@ namespace Libri_Samir_Lolli
                         count++;
                     }
                 }
-            }}
+            }else
+                result = new string[1][];
+            result[0] = new string[1];
+            result[0][0] = "";
+        }
     }
 }
