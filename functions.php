@@ -4,16 +4,18 @@
 	$str = file_get_contents('http://localhost/Lolli/Tp/books.json');
 	$books = json_decode($str, true); 
 	$result = array();
-	
+	$count = 0;
 	foreach($books as $book)
 	{
 		//Ottiene il titolo in base al reparto e alla sezione
 		if($book['Sezione']==$Sezione && $book['Reparto']==$Reparto)
 		{
-			array_push($result,$book['Titolo']);
-			 
+			//array_push($result,$book['Titolo']);
+			$count++
+			
 		}
 	}
+	array_push($result,$count);
 	return $result;
  }
  
@@ -82,7 +84,8 @@
 				//ritorna i libri e la relativa quantità
 				array_push($b,$c['Book'][0]['BookId']);
 					  
-				array_push($a,$c['Book'][0]['Amount']);				  
+				array_push($a,$c['Book'][0]['Amount']);	
+				
 			}
 		} 
 	}

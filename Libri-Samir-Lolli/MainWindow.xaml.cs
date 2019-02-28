@@ -60,8 +60,6 @@ namespace Libri_Samir_Lolli
                     lst.Items.Add("Titolo: " + result[0][j] + " Sconto: " + result[1][j]);
                 
             }
-            
-
         }
 
         async private void btn_richiesta3_Click_1(object sender, RoutedEventArgs e)
