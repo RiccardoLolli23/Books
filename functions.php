@@ -10,7 +10,7 @@
 		//Ottiene il titolo in base al reparto e alla sezione
 		if($book['Sezione']==$Sezione && $book['Reparto']==$Reparto)
 		{
-			array_push($result,"Titolo: ".$book['Titolo']);
+			array_push($result,$book['Titolo']);
 			 
 		}
 	}
@@ -31,11 +31,12 @@
 	
 	foreach($a as $book)
 	{
-		 
-		array_push($b,"Titolo: ".$book['Titolo']);
+		//Inserisce libri e sconti nei rispettivi array 
+		array_push($b,$book['Titolo']);
 			 
-		array_push($s,"Sconto: " .$book['Sconto']);	 
+		array_push($s,$book['Sconto']);	 
 	}
+	//inserisce gli array dei libri e degli sconti nel' array risultante mantenendo gli indici
 	array_push($result,$b,$s);
 	return $result;
  }
@@ -54,7 +55,7 @@
 		{
 			
 			if(diff($data2,$book['Data']))
-				array_push($result,"Titolo: " . $book['Titolo']);
+				array_push($result,$book['Titolo']);
 		}
 	}
 
@@ -74,13 +75,14 @@
 		//Controlla l'utente inserito
 		if($utente['Id'] == $id)
 		{
-			array_push($result,"Email: ".$utente['Email']);
+			array_push($result,$utente['Email']);
 			//Ritorna il carrello
 			foreach($utente['Cart'] as $c)
 			{
-				array_push($b,"Libro: ".$c['Book'][0]['BookId']);
+				//ritorna i libri e la relativa quantità
+				array_push($b,$c['Book'][0]['BookId']);
 					  
-				array_push($a,"Amount: ".$c['Book'][0]['Amount']);				  
+				array_push($a,$c['Book'][0]['Amount']);				  
 			}
 		} 
 	}
