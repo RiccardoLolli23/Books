@@ -62,6 +62,8 @@ namespace Libri_Samir_Lolli
                     lst.Items.Add("Titolo: " + result[0][j] + " Sconto: " + result[1][j]);
                 
             }
+            
+
         }
 
         //restituisce libri compresi tra due date
@@ -207,7 +209,6 @@ namespace Libri_Samir_Lolli
                         count++;
                     }
                 }
-
             }
             else
             {
@@ -224,6 +225,5 @@ namespace Libri_Samir_Lolli
             lst.Items.Add("RICHIESTA 2: Elenco dei libri scontati presenti in tutti i reparti in ordine crescente per sconto (da quelli meno a quelli più scontati)");
             lst.Items.Add("RICHIESTA 3: Elenco libri archiviati all'interno di un periodo definito da due date inserite in input");
         }
-
     }
 }

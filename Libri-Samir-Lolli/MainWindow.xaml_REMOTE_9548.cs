@@ -36,7 +36,6 @@ namespace Libri_Samir_Lolli
         //ritorna i libri in base alla sezione e al reparto specificati
         async private void btn_richiesta1_Click(object sender, RoutedEventArgs e)
         {
-            lst.Items.Clear();
             string url = "http://10.13.100.2/Lolli/Tp/Server.php?op=1&rep=" + txt_REP.Text.ToLower()+"&sez="+txt_SEZ.Text.ToLower();
             string task = await(Richiesta(url));
             SplitReplace(task);
@@ -51,7 +50,6 @@ namespace Libri_Samir_Lolli
         //restituisce tutti i libri ordinati in base allo sconto applicato o che sarà applicato
         async private void btn_richiesta2_Click(object sender, RoutedEventArgs e)
         {
-            lst.Items.Clear();
             string url = "http://10.13.100.2/Lolli/Tp/Server.php?op=2";
             //Richiesta(url);
             string task = await(Richiesta(url));
@@ -67,7 +65,6 @@ namespace Libri_Samir_Lolli
         //restituisce libri compresi tra due date
         async private void btn_richiesta3_Click_1(object sender, RoutedEventArgs e)
         {
-            lst.Items.Clear();
             if (Date1.SelectedDate != null)
             {
                 if (Date2.SelectedDate != null)
@@ -93,7 +90,6 @@ namespace Libri_Samir_Lolli
         // bottone che si occupa di elencare i libri comprati dagli utenti
         async private void btn_richiesta_4_Click(object sender, RoutedEventArgs e)
         {
-            lst.Items.Clear();
             int n;
 
             if (int.TryParse(txt_ID.Text, out n))
@@ -186,7 +182,7 @@ namespace Libri_Samir_Lolli
                 //separa il risultato in array
                 string[] s = stringa.Split('[');
                 int count = 0;
-
+                
                 //Conta il numero di array
                 for (int i = 0; i < s.Length; i++)
                 {
@@ -207,6 +203,8 @@ namespace Libri_Samir_Lolli
                         count++;
                     }
                 }
+
+            
 
             }
             else
