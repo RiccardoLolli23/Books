@@ -25,35 +25,60 @@ namespace Libri_Samir_Lolli
     {
         static string mycontent;
         static ListBox lst;
+        string[][] result;
         public MainWindow()
         {
             InitializeComponent();
             lst = lst_primary;
+            
         }
 
-       
 
-        private void btn_richiesta1_Click(object sender, RoutedEventArgs e)
+
+        async private void btn_richiesta1_Click(object sender, RoutedEventArgs e)
         {
             string url = "http://10.13.100.2/Lolli/Tp/Server.php?op=1&rep=" + txt_REP.Text.ToLower()+"&sez="+txt_SEZ.Text.ToLower();
-            Richiesta(url);
+            string task = await(Richiesta(url));
+            SplitReplace(task);
+            for (int j = 0; j < result[0].Length; j++)
+            {
+
+                lst.Items.Add("Titolo: " + result[0][j]);
+
+            }
         }
 
-        private void btn_richiesta2_Click(object sender, RoutedEventArgs e)
+        async private void btn_richiesta2_Click(object sender, RoutedEventArgs e)
         {
             string url = "http://10.13.100.2/Lolli/Tp/Server.php?op=2";
-            Richiesta(url);
+            //Richiesta(url);
+            string task = await(Richiesta(url));
+            SplitReplace(task);
+            for (int j = 0; j < result[0].Length; j++)
+            {
+               
+                    lst.Items.Add("Titolo: " + result[0][j] + " Sconto: " + result[1][j]);
+                
+            }
+            
+
         }
 
-        private void btn_richiesta3_Click_1(object sender, RoutedEventArgs e)
+        async private void btn_richiesta3_Click_1(object sender, RoutedEventArgs e)
         {
             if (Date1.SelectedDate != null)
             {
                 if (Date2.SelectedDate != null)
                 {
                     string url = "http://10.13.100.2/Lolli/Tp/Server.php?op=3&d1=" + Date1.DisplayDate.ToShortDateString() + "&d2=" + Date2.DisplayDate.ToShortDateString();
-                    
-                    Richiesta(url);
+                    string task = await(Richiesta(url));
+                    SplitReplace(task);
+                    for (int j = 0; j < result[0].Length; j++)
+                    {
+
+                        lst.Items.Add("Titolo: " + result[0][j]);
+
+                    }
                 }
                 else
                     MessageBox.Show("Select date", "Errore");
@@ -63,7 +88,7 @@ namespace Libri_Samir_Lolli
 
         }
 
-        private void btn_richiesta_4_Click(object sender, RoutedEventArgs e)
+        async private void btn_richiesta_4_Click(object sender, RoutedEventArgs e)
         {
             int n;
 
@@ -72,7 +97,19 @@ namespace Libri_Samir_Lolli
                 if (n <= 5 && n > 0)
                 {
                     string url = "http://10.13.100.2/Lolli/Tp/Server.php?op=4&id=" + txt_ID.Text;
-                    Richiesta(url);
+                    string task = await(Richiesta(url));
+                    SplitReplace(task);
+                    
+                        lst.Items.Add("Titolo: " + result[0][0]);
+                        for (int j = 0; j < result[1].Length; j++)
+                        {
+                            lst.Items.Add("Titolo: " + result[1][j] + " Sconto: " + result[2][j]);
+
+                        }
+                        
+
+                    
+                    
                 }
                 else
                     MessageBox.Show("Index should be lower or equal than 5", "Errore");
@@ -81,7 +118,7 @@ namespace Libri_Samir_Lolli
                 MessageBox.Show("The input should be a number between 1 and 5", "Errore");
         }
 
-        async static void Richiesta(string url)
+        async static Task<string> Richiesta(string url)
         {
             using (HttpClient client = new HttpClient())
             {
@@ -89,12 +126,15 @@ namespace Libri_Samir_Lolli
                 {
                     using (HttpContent content = response.Content)
                     {
-                        mycontent = await content.ReadAsStringAsync();
                         
+                        mycontent = await content.ReadAsStringAsync();
+                        return mycontent;
+                        /*
+                        mycontent = mycontent.Replace("],", "");
+                        mycontent = mycontent.Replace("]", "");
+                        mycontent = mycontent.Replace(",[", "[");
+                                                                     
                         lst.Items.Clear();
-                        mycontent = mycontent.Replace("],","");
-                        mycontent = mycontent.Replace("]","");
-                        mycontent = mycontent.Replace(",[","[");
                         if (mycontent != "[")
                         {
                             //separa il risultato in array
@@ -129,10 +169,44 @@ namespace Libri_Samir_Lolli
                                     lst.Items.Add(a[i][j]);
                                 }
                             }
-                        }
+                        }*/
                     }
                 }
             }
         }
+
+        void SplitReplace(string stringa)
+        {
+            stringa = stringa.Replace("],", "");
+            stringa = stringa.Replace("]", "");
+            stringa = stringa.Replace(",[", "[");
+
+            if (stringa != "[")
+            {
+                //separa il risultato in array
+                string[] s = stringa.Split('[');
+                int count = 0;
+                
+                //Conta il numero di array
+                for (int i = 0; i < s.Length; i++)
+                {
+                    if (s[i] != "")
+                    {
+
+                        count++;
+                    }
+                }
+                result = new string[count][];
+                count = 0;
+                //Separa gli array nei singoli elementi
+                for (int i = 0; i < s.Length; i++)
+                {
+                    if (s[i] != "")
+                    {
+                        result[count] = s[i].Split(',');
+                        count++;
+                    }
+                }
+            }}
     }
 }

@@ -22,7 +22,8 @@
           {
             "BookId": "Fun with Dick and Jane",
             "Amount": "3"
-          }
+          },{"BookId": "Dick and Jane",
+            "Amount": "5"}
         ]
       },
 	  {
