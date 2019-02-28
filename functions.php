@@ -82,7 +82,8 @@
 				//ritorna i libri e la relativa quantità
 				array_push($b,$c['Book'][0]['BookId']);
 					  
-				array_push($a,$c['Book'][0]['Amount']);				  
+				array_push($a,$c['Book'][0]['Amount']);	
+				
 			}
 		} 
 	}
