@@ -44,7 +44,7 @@ namespace Libri_Samir_Lolli
             for (int j = 0; j < result[0].Length; j++)
             {
 
-                lst.Items.Add("Quantità: " + result[0][j]);
+                lst.Items.Add("Quantità             : " + result[0][j]);
 
             }
         }
